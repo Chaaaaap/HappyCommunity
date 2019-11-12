@@ -267,11 +267,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Froziph\\source\\repos\\HappyCommunity\\HappyCommunity\\HappyCommunity.csproj",
+      "projectUniqueName": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
       "projectName": "HappyCommunity",
-      "projectPath": "C:\\Users\\Froziph\\source\\repos\\HappyCommunity\\HappyCommunity\\HappyCommunity.csproj",
+      "projectPath": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
       "packagesPath": "C:\\Users\\Froziph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Froziph\\source\\repos\\HappyCommunity\\HappyCommunity\\obj\\",
+      "outputPath": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Froziph\\AppData\\Roaming\\NuGet\\NuGet.Config",

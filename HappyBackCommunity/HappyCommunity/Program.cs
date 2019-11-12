@@ -14,15 +14,18 @@ namespace HappyCommunity
 	{
 		public static void Main(string[] args)
 		{
-			// create a new database connection:
-			SqliteConnection sqlite_conn =
-			  new SqliteConnection("Data Source=HappyCommunity.db;");
 
-			// open the connection:
-			sqlite_conn.Open();
-			SqliteCommand sqlite_cmd = sqlite_conn.CreateCommand();
-			sqlite_cmd.CommandText = "INSERT INTO FuckingLort (Navn) VALUES ('Bruce Willis');";
-			sqlite_cmd.ExecuteNonQuery();	
+			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db;")) 
+			{
+				c.Open();
+				String sql = "INSERT INTO FuckingLort (Navn) VALUES ('Mikkel Willis');";
+				using (SqliteCommand cmd = new SqliteCommand(sql, c))
+				{
+					cmd.ExecuteNonQuery();
+				}
+			}
+
+
 			CreateHostBuilder(args).Build().Run();
 		}
 
