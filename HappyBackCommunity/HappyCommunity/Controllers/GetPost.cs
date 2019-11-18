@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using HappyCommunity.Types;
@@ -12,46 +11,48 @@ using Microsoft.Data.Sqlite;
 namespace HappyCommunity.Controllers
 {
 	[Route("api/[controller]")]
-	public class GetPosts : Controller
+	public class GetPost : Controller
 	{
 		// GET: api/<controller>
 		[HttpGet]
-		public IEnumerable<PostOverviewModel> Get()
+		public IEnumerable<string> Get()
 		{
-			List<PostOverviewModel> Posts  = new List<PostOverviewModel>();
+			return new string[] { "value1", "value2" };
+		}
+
+		// GET api/<controller>/5
+		[HttpGet("{id}")]
+		public Post Get(int id)
+		{
+
+			Post post = null;
 			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db"))
 			{
 				c.Open();
-				String sql = "Select Posts.id, Title, Reward, Name, City FROM Posts Inner JOIN Users on Posts.CreatorID = Users.ID;";
+				String sql = $"Select Posts.ID, Title, Reward, Description, Name, City, ZipCode from Posts INNER JOIN Users on Posts.CreatorID = Users.ID where Posts.ID = {id}";
 				using (SqliteCommand cmd = new SqliteCommand(sql, c))
 				{
 					using (SqliteDataReader rdr = cmd.ExecuteReader())
 					{
 						while (rdr.Read())
 						{
-							Posts.Add(new Types.PostOverviewModel()
+							post = new Post()
 							{
 								Id = Int32.Parse(rdr["ID"].ToString()),
 								Title = rdr["Title"].ToString(),
 								Reward = Int32.Parse(rdr["Reward"].ToString()),
 								Creator = rdr["Name"].ToString(),
-								City = rdr["City"].ToString()
+								City = rdr["City"].ToString(),
+								ZipCode = Int32.Parse(rdr["ZipCode"].ToString()),
+								Description = rdr["Description"].ToString()
+								
 
-							}) ;
+							} ;
 						}
         }
 				}
 			}
-
-
-			return Posts;
-		}
-
-		// GET api/<controller>/5
-		[HttpGet("{id}")]
-		public string Get(int id)
-		{
-			return "value";
+			return post;
 		}
 
 		// POST api/<controller>
