@@ -36,7 +36,12 @@ public class postOverviewAdapter extends BaseAdapter {
         return position;
     }
 
+    public void add(PostOverviewModel item) {
 
+        postList.add(item);
+
+
+    }
 
 
     @Override

@@ -1,6 +1,8 @@
 package com.app.happycommunity;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.*;
 import android.view.*;
 import android.widget.*;
@@ -27,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent hostIntent = new Intent(MainActivity.this, postOverview.class);
 
+                startActivity(hostIntent);
 
             }
         });

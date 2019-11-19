@@ -10,7 +10,7 @@ public class ApiPosts {
 
 //    private
 
-    public ArrayList<PostOverviewModel> getPosts() {
+    public static ArrayList<PostOverviewModel> getPosts() {
         String url = "getposts";
 
         try {

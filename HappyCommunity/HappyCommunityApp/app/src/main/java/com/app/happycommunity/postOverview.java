@@ -4,6 +4,14 @@ import android.view.View;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.app.happycommunity.models.PostOverviewModel;
+import com.app.happycommunity.api.*;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class postOverview extends AppCompatActivity{
     ListView postList;
     postOverviewAdapter adapter;
@@ -15,6 +23,12 @@ public class postOverview extends AppCompatActivity{
         postList=(ListView) findViewById(R.id.postList);
         adapter = new postOverviewAdapter(getApplicationContext());
         postList.setAdapter(adapter);
+
+       ArrayList<PostOverviewModel> temp=  new ArrayList<PostOverviewModel>();
+       temp= ApiPosts.getPosts();
+       for(PostOverviewModel model: temp){
+           adapter.add(model);
+       }
 
     }
 
