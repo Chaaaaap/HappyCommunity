@@ -5,6 +5,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
 import com.app.happycommunity.models.PostOverviewModel;
 import com.app.happycommunity.api.*;
 
@@ -24,8 +25,12 @@ public class postOverview extends AppCompatActivity{
         adapter = new postOverviewAdapter(getApplicationContext());
         postList.setAdapter(adapter);
 
-       ArrayList<PostOverviewModel> temp=  new ArrayList<PostOverviewModel>();
-       temp= ApiPosts.getPosts();
+       ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
+       try {
+           temp = new FetchPostsAsyncTask().execute().get();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
        for(PostOverviewModel model: temp){
            adapter.add(model);
        }

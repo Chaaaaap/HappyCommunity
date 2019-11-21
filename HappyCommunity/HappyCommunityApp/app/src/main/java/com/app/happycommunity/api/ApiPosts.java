@@ -8,15 +8,13 @@ import java.util.ArrayList;
 
 public class ApiPosts {
 
-//    private
-
     public static ArrayList<PostOverviewModel> getPosts() {
         String url = "getposts";
+        ArrayList<PostOverviewModel> posts = new ArrayList<>();
 
         try {
             JSONArray array = ApiConnector.getJSONArray(url);
 
-            ArrayList<PostOverviewModel> posts = new ArrayList<>();
 
             for(int i = 0; i < array.length(); i++) {
                 posts.add(new PostOverviewModel(array.getJSONObject(i)));
@@ -25,6 +23,6 @@ public class ApiPosts {
         } catch(Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return posts;
     }
 }

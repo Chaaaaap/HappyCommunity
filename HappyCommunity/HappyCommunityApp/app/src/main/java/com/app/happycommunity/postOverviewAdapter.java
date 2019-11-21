@@ -55,7 +55,7 @@ public class postOverviewAdapter extends BaseAdapter {
         final TextView creator= (TextView) postLayout.findViewById(R.id.postTitle);
         final TextView city = (TextView) postLayout.findViewById(R.id.postCity);
         title.setText(model.getTitle());
-        reward.setText(model.getReward());
+        reward.setText(Integer.toString(model.getReward()));
         creator.setText(model.getCreator());
         city.setText(model.getCity());
 
