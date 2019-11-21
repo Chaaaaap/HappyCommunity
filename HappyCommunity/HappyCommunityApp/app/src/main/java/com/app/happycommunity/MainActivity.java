@@ -9,7 +9,7 @@ import android.widget.*;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static String Username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent hostIntent = new Intent(MainActivity.this, postOverview.class);
-
-                startActivity(hostIntent);
+                Intent intent = new Intent(MainActivity.this, postOverview.class);
+                Username=userName.getText().toString();
+                startActivity(intent);
 
             }
         });

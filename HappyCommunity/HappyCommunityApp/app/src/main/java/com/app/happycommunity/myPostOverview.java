@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,17 +19,25 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class postOverview extends AppCompatActivity{
+public class myPostOverview extends AppCompatActivity{
     ListView postList;
     postOverviewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.post_view);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         postList=(ListView) findViewById(R.id.postList);
         adapter = new postOverviewAdapter(getApplicationContext());
         postList.setAdapter(adapter);
+        adapter.clear();
+        TextView header = (TextView) findViewById(R.id.postHeader);
+        header.setText("My Posts");
+        final Button createPostButton = (Button) findViewById(R.id.createpostPO);
+        final Button profileButton = (Button) findViewById(R.id.profilePO);
+        final Button myPostsButton = (Button) findViewById(R.id.mypostsPO);
+        myPostsButton.setText("All Posts");
 
         ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
         try {
@@ -37,17 +46,17 @@ public class postOverview extends AppCompatActivity{
 
             }else {
                 for(PostOverviewModel model: temp){
-                    if(!model.getCreator().equals(MainActivity.Username)) {
+                    if(model.getCreator().equals(MainActivity.Username)) {
 
 
                         adapter.add(model);
 
                     }
-            }
+                }
 
             }
         } catch (Exception e) {
-               e.printStackTrace();
+            e.printStackTrace();
         }
 
 
@@ -58,21 +67,15 @@ public class postOverview extends AppCompatActivity{
                                     long arg3)
             {
                 PostOverviewModel post = (PostOverviewModel) adapter.getItemAtPosition(position);
-                Intent intent = new Intent(postOverview.this, postPicked.class);
-                intent.putExtra("creator",post.getCreator());
-                intent.putExtra("title", post.getTitle());
-                intent.putExtra("reward", post.getReward());
-                startActivity(intent);
+
             }
         });
-        final Button createPostButton = (Button) findViewById(R.id.createpostPO);
-        final Button profileButton = (Button) findViewById(R.id.profilePO);
-        final Button myPostsButton = (Button) findViewById(R.id.mypostsPO);
+
 
         myPostsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(postOverview.this, myPostOverview.class);
+                Intent intent = new Intent(myPostOverview.this, postOverview.class);
 
                 startActivity(intent);
 
@@ -82,7 +85,7 @@ public class postOverview extends AppCompatActivity{
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(postOverview.this, postOverview.class);
+                Intent intent = new Intent(myPostOverview.this, postOverview.class);
 
                 startActivity(intent);
 
@@ -92,7 +95,7 @@ public class postOverview extends AppCompatActivity{
         createPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(postOverview.this, postOverview.class);
+                Intent intent = new Intent(myPostOverview.this, postOverview.class);
 
                 startActivity(intent);
 

@@ -26,6 +26,15 @@
             android:screenOrientation="portrait"
             android:name=".postOverview">
         </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".myPostOverview">
+
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".postPicked">
+        </activity>
     </application>
 
 </manifest>

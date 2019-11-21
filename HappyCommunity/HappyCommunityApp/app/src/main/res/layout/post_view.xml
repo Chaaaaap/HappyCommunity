@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".postOverview"
     >
 
     <LinearLayout
@@ -12,28 +11,73 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="HappyCommunity"
         android:textSize="50dp">
 
     </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All Posts"
+            android:textSize="20dp"
+            android:id="@+id/postHeader">
+
+        </TextView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <ScrollView
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
-        <ListView
-            android:id="@+id/postList"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-        </ListView>
-    </ScrollView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <ListView
+                android:id="@+id/postList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </ListView>
+        </ScrollView>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/mypostsPO"
+                android:text="My Posts">
+
+            </Button>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/profilePO"
+                android:text="Profile">
+            </Button>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/createpostPO"
+                android:text="Create Post">
+
+        </Button>
 
     </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

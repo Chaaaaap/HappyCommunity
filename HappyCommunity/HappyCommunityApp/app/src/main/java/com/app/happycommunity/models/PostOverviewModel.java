@@ -47,7 +47,6 @@ public class PostOverviewModel {
     public String getCity() {
         return this.city;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
