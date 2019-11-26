@@ -42,4 +42,36 @@ public class ApiPosts {
         }
         return null;
     }
+
+
+    public static PostOverviewModel makePost(String id) {
+        String url = "createpost/"+id;
+        try {
+            JSONObject object = ApiConnector.getObject(url);
+
+
+
+            PostOverviewModel post =(new PostOverviewModel(object));
+
+            return post;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static PostOverviewModel deletePost(int id) {
+        String url = "deletePost/"+id;
+        try {
+            JSONObject object = ApiConnector.getObject(url);
+
+
+
+            PostOverviewModel post =(new PostOverviewModel(object));
+
+            return post;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
