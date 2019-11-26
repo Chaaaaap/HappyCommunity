@@ -9,7 +9,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.app.happycommunity.asynctasks.CreatePostAsyncTask;
+import com.app.happycommunity.asynctasks.DeletePostAsyncTask;
 import com.app.happycommunity.asynctasks.FetchPostAsyncTask;
+import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
 
 public class myPostDeletion extends AppCompatActivity {
@@ -22,7 +25,7 @@ public class myPostDeletion extends AppCompatActivity {
 
         String IDString = getIntent().getStringExtra("ID");
         PostOverviewModel post= null;
-        int ID= Integer.parseInt(IDString);
+       final int ID= Integer.parseInt(IDString);
         try {
             post = new FetchPostAsyncTask().execute(ID).get();
 
@@ -46,12 +49,33 @@ public class myPostDeletion extends AppCompatActivity {
         acceptButton.setText("Delete Post");
         declineButton.setText("Back");
 
-        acceptButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Delete the post from database
 
-            }
+                acceptButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Insert something in the database
+
+
+
+                        try {
+
+
+                            PostOverviewModel temp = new DeletePostAsyncTask().execute(ID).get();
+
+
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        Intent intent = new Intent(myPostDeletion.this, myPostOverview.class);
+
+                        startActivity(intent);
+                        finish();
+                    }
+
+
+
+
         });
         declineButton.setOnClickListener(new View.OnClickListener() {
             @Override

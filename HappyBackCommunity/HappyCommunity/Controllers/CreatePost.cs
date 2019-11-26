@@ -14,13 +14,13 @@ namespace HappyCommunity.Controllers
 	public class CreatePost : Controller
 	{
 		[HttpGet("{info}")]
-		public IActionResult Get(HttpRequestMessage request, int creatorID, string title, int reward, string description)
+		public IActionResult Get(HttpRequestMessage request, string name, string username, string title, int reward, string description)
 		{
 			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db"))
 			{
 				c.Open();
 
-				string sql = $"INSERT INTO \"Posts\"(CreatorID, Title, Reward, Description) VALUES({creatorID}, '{title}', {reward}, '{description}');";
+				string sql = $"INSERT INTO \"Posts\"(UserName, Name, Title, Reward, Description) VALUES('{username}', '{name}', '{title}', {reward}, '{description}');";
 				using (SqliteCommand cmd = new SqliteCommand(sql, c))
 				{
 					using (SqliteDataReader rdr = cmd.ExecuteReader())
