@@ -22,7 +22,7 @@ namespace HappyCommunity.Controllers
 			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db"))
 			{
 				c.Open();
-				String sql = "Select Posts.id, Title, Reward, Name, City FROM Posts Inner JOIN Users on Posts.CreatorID = Users.ID;";
+				String sql = "Select Posts.id, Title, Reward, Name, City, UserName FROM Posts Inner JOIN Users on Posts.CreatorID = Users.ID;";
 				using (SqliteCommand cmd = new SqliteCommand(sql, c))
 				{
 					using (SqliteDataReader rdr = cmd.ExecuteReader())
@@ -34,10 +34,11 @@ namespace HappyCommunity.Controllers
 								Id = Int32.Parse(rdr["ID"].ToString()),
 								Title = rdr["Title"].ToString(),
 								Reward = Int32.Parse(rdr["Reward"].ToString()),
-								Creator = rdr["Name"].ToString(),
-								City = rdr["City"].ToString()
+								Name = rdr["Name"].ToString(),
+								City = rdr["City"].ToString(),
+								UserName = rdr["UserName"].ToString()
 
-							});
+							}) ;
 						}
 					}
 				}
