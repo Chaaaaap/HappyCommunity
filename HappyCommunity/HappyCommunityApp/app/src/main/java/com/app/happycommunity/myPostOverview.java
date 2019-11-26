@@ -46,7 +46,7 @@ public class myPostOverview extends AppCompatActivity{
 
             }else {
                 for(PostOverviewModel model: temp){
-                    if(model.getCreator().equals(GlobalData.loggedInUser.getUsername())) {
+                    if(model.getUsername().equals(GlobalData.loggedInUser.getUsername())) {
 
 
                         adapter.add(model);

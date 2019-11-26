@@ -28,7 +28,7 @@ public class UserModel {
 
     public UserModel(JSONObject object) {
         try {
-            this.Username = object.getString("UserName");
+            this.Username = object.getString("userName");
             this.name = object.getString("name");
             this.points = object.getInt("points");
             this.address = object.getString("address");

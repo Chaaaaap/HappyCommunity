@@ -30,11 +30,13 @@ public class PostOverviewModel {
             this.reward = object.getInt("reward");
             this.creator = object.getString("name");
             this.city = object.getString("city");
+
+            this.username =object.getString("userName");
             this.description = object.getString("description");
-            this.username =object.getString("username");
         } catch(JSONException e) {
             e.printStackTrace();
             Log.d("DEBUG: ", e.getMessage());
+            e.printStackTrace();
         }
     }
     public String getDescription(){return this.description;}
