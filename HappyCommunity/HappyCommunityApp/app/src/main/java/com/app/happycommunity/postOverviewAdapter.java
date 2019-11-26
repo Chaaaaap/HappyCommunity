@@ -39,15 +39,13 @@ public class postOverviewAdapter extends BaseAdapter {
     }
 
     public void add(PostOverviewModel item) {
-
         postList.add(item);
-
-
+        this.notifyDataSetChanged();
     }
+
     public void clear() {
-
         postList.clear();
-
+        this.notifyDataSetChanged();
     }
 
     @Override

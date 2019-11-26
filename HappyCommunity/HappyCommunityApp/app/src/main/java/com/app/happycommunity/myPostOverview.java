@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
 import com.app.happycommunity.models.GlobalData;
@@ -23,6 +24,7 @@ import java.util.List;
 public class myPostOverview extends AppCompatActivity{
     ListView postList;
     postOverviewAdapter adapter;
+    SwipeRefreshLayout swipeRefreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,27 +39,11 @@ public class myPostOverview extends AppCompatActivity{
         final Button createPostButton = (Button) findViewById(R.id.createpostPO);
         final Button profileButton = (Button) findViewById(R.id.profilePO);
         final Button myPostsButton = (Button) findViewById(R.id.mypostsPO);
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         myPostsButton.setText("All Posts");
 
-        ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
-        try {
-            temp = new FetchPostsAsyncTask().execute().get();
-            if(temp==null){
+        loadList();
 
-            }else {
-                for(PostOverviewModel model: temp){
-                    if(model.getUsername().equals(GlobalData.loggedInUser.getUsername())) {
-
-
-                        adapter.add(model);
-
-                    }
-                }
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
         postList.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -92,7 +78,6 @@ public class myPostOverview extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(myPostOverview.this, postOverview.class);
-
                 startActivity(intent);
                 finish();
             }
@@ -108,6 +93,32 @@ public class myPostOverview extends AppCompatActivity{
             }
         });
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                adapter.clear();
+                loadList();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
+    }
+   private void loadList() {
+        ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
+        try {
+            temp = new FetchPostsAsyncTask().execute().get();
+            if(temp.isEmpty()){
+
+            }else {
+                for(PostOverviewModel model: temp){
+                    if(model.getUsername().equals(GlobalData.loggedInUser.getUsername())) {
+                        adapter.add(model);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

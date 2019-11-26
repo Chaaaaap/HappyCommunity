@@ -5,74 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
-    <LinearLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/swipeRefreshLayout">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="All Posts"
-            android:textSize="40dp"
-            android:id="@+id/postHeader">
-
-        </TextView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
-
-            <ListView
-                android:id="@+id/postList"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                >
-
-            </ListView>
-        </ScrollView>
-    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:paddingTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="vertical">
 
-            <Button
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:id="@+id/mypostsPO"
-                android:text="My Posts">
+                android:text="All Posts"
+                android:textSize="40dp"
+                android:id="@+id/postHeader">
 
-            </Button>
-            <Button
+            </TextView>
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:id="@+id/profilePO"
-                android:text="Profile">
-            </Button>
-            <Button
+                android:text="There is no posts to show"
+                android:textSize="30dp"
+                android:layout_marginTop="1.5in"
+                android:id="@+id/emptyListText"
+                android:visibility="gone">
+
+            </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:id="@+id/createpostPO"
-                android:text="Create Post">
+                android:layout_height="match_parent"
+                android:fillViewport="true">
 
-        </Button>
+                <ListView
+                    android:id="@+id/postList"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    >
 
-    </LinearLayout>
+                </ListView>
+            </ScrollView>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:paddingTop="20dp"
+                android:orientation="horizontal"
+                >
 
-    </LinearLayout>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/mypostsPO"
+                    android:text="My Posts">
 
+                </Button>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/profilePO"
+                    android:text="Profile">
+                </Button>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/createpostPO"
+                    android:text="Create Post">
+
+                </Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
