@@ -3,6 +3,7 @@ package com.app.happycommunity.api;
 import android.util.Log;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -54,9 +55,13 @@ public class ApiConnector {
         try
         {
             StringBuffer data = get(url);
-            JSONArray json = new JSONArray(data.toString());
+            try {
+                JSONArray json = new JSONArray(data.toString());
+                return json.getJSONObject(json.length() - 1);
+            } catch (JSONException e) {
+                return new JSONObject((data.toString()));
+            }
 
-            return json.getJSONObject(json.length() - 1);
         } catch (Exception e)
         {
             throw e;
