@@ -37,9 +37,9 @@ namespace HappyCommunity.Controllers
 								Creator = rdr["Name"].ToString(),
 								City = rdr["City"].ToString()
 
-							}) ;
+							});
 						}
-        }
+					}
 				}
 			}
 

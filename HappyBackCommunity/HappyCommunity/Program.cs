@@ -17,12 +17,12 @@ namespace HappyCommunity
 
 			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db;")) 
 			{
-				c.Open();
-				String sql = "INSERT INTO FuckingLort (Navn) VALUES ('Mikkel Willis');";
-				using (SqliteCommand cmd = new SqliteCommand(sql, c))
-				{
-					cmd.ExecuteNonQuery();
-				}
+//				c.Open();
+				//String sql = "INSERT INTO FuckingLort (Navn) VALUES ('Mikkel Willis');";
+				//using (SqliteCommand cmd = new SqliteCommand(sql, c))
+				//{
+				//	cmd.ExecuteNonQuery();
+				//}
 			}
 
 
