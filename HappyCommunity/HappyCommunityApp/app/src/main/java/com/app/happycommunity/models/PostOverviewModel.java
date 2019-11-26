@@ -11,6 +11,7 @@ public class PostOverviewModel {
     private int reward;
     private String creator;
     private String city;
+    private String description;
 
     public PostOverviewModel(long id, String title, int reward, String creator, String city) {
         this.id = id;
@@ -26,12 +27,13 @@ public class PostOverviewModel {
             this.reward = object.getInt("reward");
             this.creator = object.getString("creator");
             this.city = object.getString("city");
+            this.description = object.getString("description");
         } catch(JSONException e) {
             e.printStackTrace();
             Log.d("DEBUG: ", e.getMessage());
         }
     }
-
+    public String getDescription(){return this.description;}
     public long getId() {
         return this.id;
     }
@@ -59,4 +61,5 @@ public class PostOverviewModel {
     public void setCity(String city) {
         this.city = city;
     }
+    public void setDescription (String description) {this.description=description;}
 }

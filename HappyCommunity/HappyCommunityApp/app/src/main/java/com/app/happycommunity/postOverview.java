@@ -59,7 +59,7 @@ public class postOverview extends AppCompatActivity{
             {
                 PostOverviewModel post = (PostOverviewModel) adapter.getItemAtPosition(position);
                 Intent intent = new Intent(postOverview.this, postPicked.class);
-                intent.putExtra("ID",post.getId());
+                intent.putExtra("ID",post.getId()+"");
 
                 startActivity(intent);
             }
