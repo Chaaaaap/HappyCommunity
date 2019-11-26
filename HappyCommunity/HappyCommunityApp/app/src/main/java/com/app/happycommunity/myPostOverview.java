@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
+import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
 import com.app.happycommunity.api.*;
 
@@ -45,7 +46,7 @@ public class myPostOverview extends AppCompatActivity{
 
             }else {
                 for(PostOverviewModel model: temp){
-                    if(model.getCreator().equals(MainActivity.Username)) {
+                    if(model.getCreator().equals(GlobalData.loggedInUser.getUsername())) {
 
 
                         adapter.add(model);
@@ -67,9 +68,8 @@ public class myPostOverview extends AppCompatActivity{
             {
                 PostOverviewModel post = (PostOverviewModel) adapter.getItemAtPosition(position);
                 Intent intent = new Intent(myPostOverview.this, myPostDeletion.class);
-                intent.putExtra("creator",post.getCreator());
-                intent.putExtra("title", post.getTitle());
-                intent.putExtra("reward", post.getReward());
+                intent.putExtra("ID",post.getId()+"");
+
                 startActivity(intent);
 
             }

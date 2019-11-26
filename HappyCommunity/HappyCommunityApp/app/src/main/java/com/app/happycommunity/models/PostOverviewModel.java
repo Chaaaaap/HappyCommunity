@@ -12,22 +12,26 @@ public class PostOverviewModel {
     private String creator;
     private String city;
     private String description;
+    private String username;
 
-    public PostOverviewModel(long id, String title, int reward, String creator, String city) {
+    public PostOverviewModel(String username, String description,long id, String title, int reward, String creator, String city) {
         this.id = id;
         this.title = title;
         this.reward = reward;
         this.creator = creator;
         this.city = city;
+        this.username=username;
+        this.description=description;
     }
     public PostOverviewModel(JSONObject object) {
         try {
             this.id = object.getLong("id");
             this.title = object.getString("title");
             this.reward = object.getInt("reward");
-            this.creator = object.getString("creator");
+            this.creator = object.getString("name");
             this.city = object.getString("city");
             this.description = object.getString("description");
+            this.username =object.getString("username");
         } catch(JSONException e) {
             e.printStackTrace();
             Log.d("DEBUG: ", e.getMessage());
@@ -49,6 +53,8 @@ public class PostOverviewModel {
     public String getCity() {
         return this.city;
     }
+    public String getUsername(){return this.username;}
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -62,4 +68,5 @@ public class PostOverviewModel {
         this.city = city;
     }
     public void setDescription (String description) {this.description=description;}
+    public void setUsername(String username) {this.username=username;}
 }

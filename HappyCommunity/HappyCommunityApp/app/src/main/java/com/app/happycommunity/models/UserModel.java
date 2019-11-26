@@ -6,7 +6,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class UserModel {
-    private long id;
+    private String Username;
     private String name;
     private int points;
     private String address;
@@ -15,8 +15,8 @@ public class UserModel {
     private int phoneNumber;
     private int countryCode;
 
-    public UserModel(long id, String name, int points, String address, int zipcode, String city, int phoneNumber, int countryCode) {
-        this.id = id;
+    public UserModel(String username, String name, int points, String address, int zipcode, String city, int phoneNumber, int countryCode) {
+        this.Username = username;
         this.name = name;
         this.points = points;
         this.address = address;
@@ -28,7 +28,7 @@ public class UserModel {
 
     public UserModel(JSONObject object) {
         try {
-            this.id = object.getLong("id");
+            this.Username = object.getString("UserName");
             this.name = object.getString("name");
             this.points = object.getInt("points");
             this.address = object.getString("address");
@@ -64,8 +64,8 @@ public class UserModel {
         this.countryCode = countryCode;
     }
 
-    public long getId() {
-        return this.id;
+    public String getUsername() {
+        return this.Username;
     }
     public String getName() {
         return this.name;
