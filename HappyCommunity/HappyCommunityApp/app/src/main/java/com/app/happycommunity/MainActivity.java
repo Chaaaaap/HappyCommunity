@@ -4,9 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.*;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.os.Bundle;
+
+import com.app.happycommunity.asynctasks.LoginAsyncTask;
+import com.app.happycommunity.models.GlobalData;
+import com.app.happycommunity.models.LoginInfo;
+import com.app.happycommunity.models.UserModel;
 
 public class MainActivity extends AppCompatActivity {
     public static String Username;
@@ -29,9 +35,18 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, postOverview.class);
-                Username=userName.getText().toString();
-                startActivity(intent);
+                Username = userName.getText().toString();
+                UserModel user = null;
+                try {
+                    user = new LoginAsyncTask().execute(new LoginInfo(Username, password.getText().toString())).get();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if (user != null) {
+                    GlobalData.loggedInUser = user;
+                    Intent intent = new Intent(MainActivity.this, postOverview.class);
+                    startActivity(intent);
+                }
 
             }
         });
