@@ -32,7 +32,7 @@ public class UserModel {
             this.name = object.getString("name");
             this.points = object.getInt("points");
             this.address = object.getString("address");
-            this.zipcode = object.getInt("zipcode");
+            this.zipcode = object.getInt("zipCode");
             this.city = object.getString("city");
             this.phoneNumber = object.getInt("phoneNumber");
             this.countryCode = object.getInt("countryCode");
@@ -41,4 +41,55 @@ public class UserModel {
             Log.d("DEBUG: ", e.getMessage());
         }
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setPoints(int points) {
+        this.points = points;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public void setZipcode(int zipCode) {
+        this.zipcode = zipCode;
+    }
+    public void setCity(String city) {
+        this.city = city;
+    }
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    public void setCountryCode(int countryCode) {
+        this.countryCode = countryCode;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+    public String getName() {
+        return this.name;
+    }
+    public int getPoints() {
+        return this.points;
+    }
+    public String getAddress() {
+        return this.address;
+    }
+    public int getZipcode() {
+        return this.zipcode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public int getCountryCode() {
+        return countryCode;
+    }
+
 }
