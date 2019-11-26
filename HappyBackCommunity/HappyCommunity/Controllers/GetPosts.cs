@@ -22,7 +22,8 @@ namespace HappyCommunity.Controllers
 			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db"))
 			{
 				c.Open();
-				String sql = "Select Posts.id, Title, Reward, Name, City, UserName FROM Posts Inner JOIN Users on Posts.CreatorID = Users.ID;";
+				String sql = "Select Posts.id, Title, Reward, Posts.Name, City, Posts.UserName FROM Posts Inner JOIN Users on Posts.UserName = Users.UserName;";
+
 				using (SqliteCommand cmd = new SqliteCommand(sql, c))
 				{
 					using (SqliteDataReader rdr = cmd.ExecuteReader())
