@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
 import com.app.happycommunity.models.GlobalData;
@@ -22,34 +23,19 @@ import java.util.List;
 public class postOverview extends AppCompatActivity{
     ListView postList;
     postOverviewAdapter adapter;
+    SwipeRefreshLayout swipeRefreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_view);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         postList=(ListView) findViewById(R.id.postList);
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         adapter = new postOverviewAdapter(getApplicationContext());
         postList.setAdapter(adapter);
 
-        ArrayList<PostOverviewModel> temp =  new ArrayList<>();
-        try {
-            temp = new FetchPostsAsyncTask().execute().get();
-            if(temp.isEmpty()){
+        loadList();
 
-            }else {
-                for(PostOverviewModel model: temp){
-                    if(!model.getUsername().equals(GlobalData.loggedInUser.getUsername())) {
-
-
-                        adapter.add(model);
-
-                    }
-                }
-
-            }
-        } catch (Exception e) {
-               e.printStackTrace();
-        }
 
 
         postList.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -102,7 +88,31 @@ public class postOverview extends AppCompatActivity{
             }
         });
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                adapter.clear();
+                loadList();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
     }
+    void loadList() {
+        ArrayList<PostOverviewModel> temp = new ArrayList<>();
+        try {
+            temp = new FetchPostsAsyncTask().execute().get();
+            if(temp.isEmpty()){
 
-
+            }else {
+                for(PostOverviewModel model: temp){
+                    if(!model.getUsername().equals(GlobalData.loggedInUser.getUsername())) {
+                        adapter.add(model);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
