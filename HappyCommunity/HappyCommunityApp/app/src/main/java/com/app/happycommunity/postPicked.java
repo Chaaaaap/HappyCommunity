@@ -24,7 +24,7 @@ public class postPicked extends AppCompatActivity {
         setContentView(R.layout.postpicked);
         String IDString = getIntent().getStringExtra("ID");
         PostOverviewModel post= null;
-     int ID= Integer.parseInt(IDString);
+        int ID= Integer.parseInt(IDString);
         System.out.println(ID);
         try {
         post = new FetchPostAsyncTask().execute(ID).get();

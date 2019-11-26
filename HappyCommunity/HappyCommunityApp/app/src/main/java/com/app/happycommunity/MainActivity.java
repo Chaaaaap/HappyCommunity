@@ -15,7 +15,7 @@ import com.app.happycommunity.models.LoginInfo;
 import com.app.happycommunity.models.UserModel;
 
 public class MainActivity extends AppCompatActivity {
-    public static String Username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Username = userName.getText().toString();
+
                 UserModel user = null;
                 try {
-                    user = new LoginAsyncTask().execute(new LoginInfo(Username, password.getText().toString())).get();
+                    user = new LoginAsyncTask().execute(new LoginInfo(userName.getText().toString(), password.getText().toString())).get();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

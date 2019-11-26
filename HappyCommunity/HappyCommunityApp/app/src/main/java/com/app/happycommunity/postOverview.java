@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
+import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
 import com.app.happycommunity.api.*;
 
@@ -37,7 +38,7 @@ public class postOverview extends AppCompatActivity{
 
             }else {
                 for(PostOverviewModel model: temp){
-                    if(!model.getCreator().equals(MainActivity.Username)) {
+                    if(!model.getCreator().equals(GlobalData.loggedInUser.getUsername())) {
 
 
                         adapter.add(model);
