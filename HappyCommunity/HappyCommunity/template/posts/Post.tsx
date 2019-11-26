@@ -4,6 +4,10 @@ import { PostOverviewModel } from "models/PostOverviewModel";
 
 export default class Post extends Component<PostOverviewModel, {}> {
 
+  // @ts-ignore
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (

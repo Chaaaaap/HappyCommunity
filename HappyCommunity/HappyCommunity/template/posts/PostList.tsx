@@ -2,34 +2,11 @@ import React, { Component } from "react";
 import { View, Text, ScrollView, StyleSheet } from "react-native";
 import { PostOverviewModel } from "models/PostOverviewModel";
 import Post from "./Post"
+import axios from "axios"
 
 export default class PostList extends Component {
-
-  navigateToPost(id: Number) {
-
-  }
-  render() {
-    return (
-      <View style={styles.body}>
-        {posts.map( (post, i) => {
-           return (
-            <View style={{marginVertical: 10}} >
-              <Post
-                key={i}
-                id={post.id}
-                title={post.title}
-                creator={post.creator}
-                reward={post.reward}
-                distance={post.distance} />
-            </View>
-          );
-        })}
-      </View>
-    );
-  }
-}
-
-const posts: PostOverviewModel[] = [
+ API: string = "localhost:5000/api";
+ posts: PostOverviewModel[] = [
   {id: 1, creator:  "Mikkel", distance: 2, reward: 100, title: "Mega nice"},
   {id: 2, creator:  "Pernille", distance: 10, reward: -100, title: "Mega taber :D"},
   {id: 3, creator:  "Mikkel", distance: 2, reward: 100, title: "Mega nice"},
@@ -49,6 +26,36 @@ const posts: PostOverviewModel[] = [
   {id: 17, creator:  "Mikkel", distance: 2, reward: 100, title: "Mega nice"},
   {id: 18, creator:  "Pernille", distance: 10, reward: -100, title: "Mega taber :D"}
 ];
+  componentWillMount() {
+    axios.get(this.API + '/getPosts/')
+        .then(response => {
+            this.posts = response.data;
+            // this.setState({ postsSet });
+        })
+  }
+  navigateToPost(id: Number) {
+
+  }
+  render() {
+    return (
+      <View style={styles.body}>
+        {this.posts.map( (post, i) => {
+           return (
+            <View style={{marginVertical: 10}} >
+              <Post
+                key={i}
+                id={post.id}
+                title={post.title}
+                creator={post.creator}
+                reward={post.reward}
+                distance={post.distance} />
+            </View>
+          );
+        })}
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   body: {
