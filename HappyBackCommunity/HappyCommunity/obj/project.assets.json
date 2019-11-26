@@ -8345,19 +8345,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Froziph\\.nuget\\packages\\": {}
+    "C:\\Users\\Mikkel\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
+      "projectUniqueName": "C:\\projects\\SSS\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
       "projectName": "HappyCommunity",
-      "projectPath": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
-      "packagesPath": "C:\\Users\\Froziph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\obj\\",
+      "projectPath": "C:\\projects\\SSS\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
+      "packagesPath": "C:\\Users\\Mikkel\\.nuget\\packages\\",
+      "outputPath": "C:\\projects\\SSS\\HappyBackCommunity\\HappyCommunity\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Froziph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mikkel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
