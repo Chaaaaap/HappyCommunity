@@ -5,23 +5,15 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a29993f1-60fe-4649-a655-733dcb7a7af1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/.vs/HappyCommunity/DesignTimeBuild/.dtbcache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/.vs/HappyCommunity/DesignTimeBuild/.dtbcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/.vs/HappyCommunity/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/.vs/HappyCommunity/config/applicationhost.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/bin/Debug/netcoreapp3.0/HappyCommunity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/bin/Debug/netcoreapp3.0/HappyCommunity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/bin/Debug/netcoreapp3.0/HappyCommunity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/bin/Debug/netcoreapp3.0/HappyCommunity.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/bin/Debug/netcoreapp3.0/HappyCommunity.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/bin/Debug/netcoreapp3.0/HappyCommunity.runtimeconfig.dev.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/Debug/netcoreapp3.0/HappyCommunity.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/HappyCommunity.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/HappyCommunity.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/HappyCommunity.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/HappyCommunity.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/HappyCommunity.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/HappyCommunity.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../HappyBackCommunity/HappyCommunity/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/happycommunity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/happycommunity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/happycommunity/postOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/happycommunity/postOverview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/happycommunity/postPicked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/happycommunity/postPicked.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,18 +90,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/api/ApiUsers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/asynctasks/LoginAsyncTask.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="245">
@@ -122,14 +102,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/UserProfileActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+            <state relative-caret-position="245">
+              <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
               <folding>
-                <element signature="e#1097#1705#0" expanded="true" />
-                <element signature="e#1704#1705#0" expanded="true" />
+                <element signature="e#1122#1858#0" expanded="true" />
+                <element signature="e#1857#1858#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/postOverview.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -137,17 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/postPicked.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="30" selection-start-line="30" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/myPostOverview.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+            <state relative-caret-position="156">
+              <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -228,6 +217,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/app/happycommunity/FetchPostsAsyncTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/happycommunity/api/ApiConnector.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/happycommunity/api/ApiPosts.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app/happycommunity/postPicked.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app/happycommunity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app/happycommunity/postOverview.java" />
       </list>
     </option>
   </component>
@@ -491,7 +483,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -563,7 +555,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3344504" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3344504" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -572,12 +564,12 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" visible="true" weight="0.48759124" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.23795621" />
-      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="5" weight="0.23795621" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -590,17 +582,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_post_overview.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/content_post_overview.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/PostOverviewActivity.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding>
-            <element signature="e#1097#1705#0" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/models/UserModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -644,13 +625,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_user_profile.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/UserProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2" />
@@ -706,6 +680,65 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/api/ApiUsers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/asynctasks/LoginAsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/UserProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/postPicked.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/myPostOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <folding>
+            <element signature="e#1122#1858#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/happycommunity/postOverview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
