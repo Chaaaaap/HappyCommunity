@@ -3,6 +3,7 @@ package com.app.happycommunity.api;
 import com.app.happycommunity.models.PostOverviewModel;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -24,5 +25,21 @@ public class ApiPosts {
             e.printStackTrace();
         }
         return posts;
+    }
+    public static PostOverviewModel getPost(Integer id) {
+        String url = "getpost/"+id;
+
+        try {
+            JSONObject object = ApiConnector.getObject(url);
+
+
+
+            PostOverviewModel post =(new PostOverviewModel(object));
+
+            return post;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

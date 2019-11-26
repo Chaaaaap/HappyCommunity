@@ -30,10 +30,10 @@ public class postOverview extends AppCompatActivity{
         adapter = new postOverviewAdapter(getApplicationContext());
         postList.setAdapter(adapter);
 
-        ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
+        ArrayList<PostOverviewModel> temp =  new ArrayList<>();
         try {
             temp = new FetchPostsAsyncTask().execute().get();
-            if(temp==null){
+            if(temp.isEmpty()){
 
             }else {
                 for(PostOverviewModel model: temp){
@@ -43,7 +43,7 @@ public class postOverview extends AppCompatActivity{
                         adapter.add(model);
 
                     }
-            }
+                }
 
             }
         } catch (Exception e) {
@@ -59,9 +59,8 @@ public class postOverview extends AppCompatActivity{
             {
                 PostOverviewModel post = (PostOverviewModel) adapter.getItemAtPosition(position);
                 Intent intent = new Intent(postOverview.this, postPicked.class);
-                intent.putExtra("creator",post.getCreator());
-                intent.putExtra("title", post.getTitle());
-                intent.putExtra("reward", post.getReward());
+                intent.putExtra("ID",post.getId()+"");
+
                 startActivity(intent);
             }
         });
@@ -75,6 +74,7 @@ public class postOverview extends AppCompatActivity{
                 Intent intent = new Intent(postOverview.this, myPostOverview.class);
 
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -85,6 +85,7 @@ public class postOverview extends AppCompatActivity{
                 Intent intent = new Intent(postOverview.this, postOverview.class);
 
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -92,9 +93,10 @@ public class postOverview extends AppCompatActivity{
         createPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(postOverview.this, postOverview.class);
+                Intent intent = new Intent(postOverview.this, createPost.class);
 
                 startActivity(intent);
+                finish();
 
             }
         });
