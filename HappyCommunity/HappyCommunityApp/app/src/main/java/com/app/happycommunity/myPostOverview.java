@@ -25,7 +25,6 @@ public class myPostOverview extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.post_view);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         postList=(ListView) findViewById(R.id.postList);
@@ -67,6 +66,11 @@ public class myPostOverview extends AppCompatActivity{
                                     long arg3)
             {
                 PostOverviewModel post = (PostOverviewModel) adapter.getItemAtPosition(position);
+                Intent intent = new Intent(myPostOverview.this, myPostDeletion.class);
+                intent.putExtra("creator",post.getCreator());
+                intent.putExtra("title", post.getTitle());
+                intent.putExtra("reward", post.getReward());
+                startActivity(intent);
 
             }
         });
@@ -78,6 +82,8 @@ public class myPostOverview extends AppCompatActivity{
                 Intent intent = new Intent(myPostOverview.this, postOverview.class);
 
                 startActivity(intent);
+                finish();
+
 
             }
         });
@@ -88,17 +94,17 @@ public class myPostOverview extends AppCompatActivity{
                 Intent intent = new Intent(myPostOverview.this, postOverview.class);
 
                 startActivity(intent);
-
+                finish();
             }
         });
 
         createPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(myPostOverview.this, postOverview.class);
+                Intent intent = new Intent(myPostOverview.this, createPost.class);
 
                 startActivity(intent);
-
+                finish();
             }
         });
 

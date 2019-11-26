@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".postPicked">
+    android:layout_height="match_parent">
 
 
     <LinearLayout
@@ -17,11 +16,11 @@
             android:layout_height="wrap_content"
             android:text="HappyCommunity"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.176" />
+             />
 
         <Space
             android:layout_width="match_parent"
@@ -31,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/titlePP"
-            android:textSize="50dp"></TextView>
+            android:textSize="20dp"></TextView>
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp"
@@ -40,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/rewardPP"
-            android:textSize="50dp"></TextView>
+            android:textSize="25dp"></TextView>
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp"
@@ -49,23 +48,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pPCreator"
-            android:textSize="50dp"></TextView>
+            android:textSize="25dp"></TextView>
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_weight="0" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pPDescription"
+            android:textSize="20dp"></TextView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+                android:id="@+id/acceptBtn"
                 android:text="Accept"
                 android:layout_weight="1"></Button>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:id="@+id/declineBtn"
                 android:text="Decline"></Button>
         </LinearLayout>
     </LinearLayout>
