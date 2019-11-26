@@ -9,23 +9,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class postPicked extends AppCompatActivity {
+public class createPost extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.postpicked);
-        String creator = getIntent().getStringExtra("ID");
-        String title=getIntent().getStringExtra("title");
-        String reward =""+getIntent().getIntExtra("reward",0);
-
-        TextView textViewCreator = (TextView) findViewById(R.id.pPCreator);
-        TextView textViewTitle = (TextView) findViewById(R.id.titlePP);
-        TextView textViewReward = (TextView) findViewById(R.id.rewardPP);
-        textViewCreator.setText(creator);
-        textViewReward.setText(reward);
-        textViewTitle.setText(title);
+        setContentView(R.layout.create_post);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 
@@ -35,14 +25,14 @@ public class postPicked extends AppCompatActivity {
         acceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //Delete the post from database
+                //Delete the post from database
 
             }
         });
         declineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(postPicked.this, postOverview.class);
+                Intent intent = new Intent(createPost.this, postOverview.class);
 
                 startActivity(intent);
                 finish();

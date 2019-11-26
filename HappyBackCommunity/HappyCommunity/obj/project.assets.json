@@ -8345,19 +8345,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Froziph\\.nuget\\packages\\": {}
+    "C:\\Users\\Mat4r\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
+      "projectUniqueName": "C:\\Users\\Mat4r\\Desktop\\sss\\code\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
       "projectName": "HappyCommunity",
-      "projectPath": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
-      "packagesPath": "C:\\Users\\Froziph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Froziph\\Desktop\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\obj\\",
+      "projectPath": "C:\\Users\\Mat4r\\Desktop\\sss\\code\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\HappyCommunity.csproj",
+      "packagesPath": "C:\\Users\\Mat4r\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mat4r\\Desktop\\sss\\code\\HappyCommunity\\HappyBackCommunity\\HappyCommunity\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Froziph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mat4r\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8405,24 +8409,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }
