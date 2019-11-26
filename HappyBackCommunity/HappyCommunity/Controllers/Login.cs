@@ -40,7 +40,7 @@ namespace HappyCommunity.Controllers
 							{
 								return Ok(new User()
 								{
-									Id = Int32.Parse(rdr["ID"].ToString()),
+									UserName = rdr["UserName"].ToString(),
 									Name = rdr["Name"].ToString(),
 									Points = Int32.Parse(rdr["CurrentPoints"].ToString()),
 									Address = rdr["Address"].ToString(),

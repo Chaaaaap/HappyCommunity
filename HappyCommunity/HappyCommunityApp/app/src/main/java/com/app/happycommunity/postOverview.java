@@ -31,10 +31,10 @@ public class postOverview extends AppCompatActivity{
         adapter = new postOverviewAdapter(getApplicationContext());
         postList.setAdapter(adapter);
 
-        ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
+        ArrayList<PostOverviewModel> temp =  new ArrayList<>();
         try {
             temp = new FetchPostsAsyncTask().execute().get();
-            if(temp==null){
+            if(temp.isEmpty()){
 
             }else {
                 for(PostOverviewModel model: temp){
@@ -44,7 +44,7 @@ public class postOverview extends AppCompatActivity{
                         adapter.add(model);
 
                     }
-            }
+                }
 
             }
         } catch (Exception e) {

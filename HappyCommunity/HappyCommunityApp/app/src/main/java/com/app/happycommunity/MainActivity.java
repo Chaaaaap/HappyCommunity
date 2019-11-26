@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                     GlobalData.loggedInUser = user;
                     Intent intent = new Intent(MainActivity.this, postOverview.class);
                     startActivity(intent);
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Wrong username or password",Toast.LENGTH_SHORT);
+                    toast.show();
                 }
 
             }

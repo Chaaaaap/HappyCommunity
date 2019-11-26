@@ -41,7 +41,8 @@ namespace HappyCommunity.Controllers
 								Id = Int32.Parse(rdr["ID"].ToString()),
 								Title = rdr["Title"].ToString(),
 								Reward = Int32.Parse(rdr["Reward"].ToString()),
-								Creator = rdr["Name"].ToString(),
+								Name = rdr["Name"].ToString(),
+								UserName = rdr["UserName"].ToString(),
 								City = rdr["City"].ToString(),
 								ZipCode = Int32.Parse(rdr["ZipCode"].ToString()),
 								Description = rdr["Description"].ToString()
