@@ -10,7 +10,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.happycommunity.api.ApiConnector;
+import com.app.happycommunity.asynctasks.CreateGeneralAsyncTask;
+import com.app.happycommunity.asynctasks.CreatePostAsyncTask;
 import com.app.happycommunity.asynctasks.FetchPostAsyncTask;
+import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
 
 import org.json.JSONArray;
@@ -24,7 +27,7 @@ public class postPicked extends AppCompatActivity {
         setContentView(R.layout.postpicked);
         String IDString = getIntent().getStringExtra("ID");
         PostOverviewModel post= null;
-        int ID= Integer.parseInt(IDString);
+       final int ID= Integer.parseInt(IDString);
         System.out.println(ID);
         try {
         post = new FetchPostAsyncTask().execute(ID).get();
@@ -52,7 +55,25 @@ public class postPicked extends AppCompatActivity {
         acceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //Delete the post from database
+
+                String takenPost = "takepost/info?username="+ GlobalData.loggedInUser.getUsername()+"&postid="+ID;
+
+                try {
+
+
+                    new CreateGeneralAsyncTask().execute(takenPost).get();
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+                Intent intent = new Intent(postPicked.this, postOverview.class);
+
+                startActivity(intent);
+                finish();
 
             }
         });

@@ -8,8 +8,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.app.happycommunity.asynctasks.CreateGeneralAsyncTask;
 import com.app.happycommunity.asynctasks.DeletePostAsyncTask;
 import com.app.happycommunity.asynctasks.FetchPostAsyncTask;
+import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
 
 public class showPendingPost extends AppCompatActivity {
@@ -33,7 +35,7 @@ public class showPendingPost extends AppCompatActivity {
 
         TextView textViewCreator = (TextView) findViewById(R.id.pPCreator);
         TextView textViewTitle = (TextView) findViewById(R.id.titlePP);
-        TextView textViewReward = (TextView) findViewById(R.id.rewardPP);
+        final TextView textViewReward = (TextView) findViewById(R.id.rewardPP);
         TextView textViewDescription = (TextView) findViewById(R.id.pPDescription);
         textViewCreator.setText(post.getCreator());
         textViewReward.setText(post.getReward()+"");
@@ -49,6 +51,19 @@ public class showPendingPost extends AppCompatActivity {
         acceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String postDone = "completepost/info?username="+ GlobalData.loggedInUser.getUsername()+"&postid="+ID+"&reward="+textViewReward.getText().toString();
+
+                try {
+
+
+                    new CreateGeneralAsyncTask().execute(postDone).get();
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 Intent intent = new Intent(showPendingPost.this, myPendingPosts.class);
 
                 startActivity(intent);
