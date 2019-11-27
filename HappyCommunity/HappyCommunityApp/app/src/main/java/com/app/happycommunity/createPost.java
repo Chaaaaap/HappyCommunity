@@ -35,7 +35,7 @@ public class createPost extends AppCompatActivity {
 
                 String newPost = "info?username="+GlobalData.loggedInUser.getUsername()+"&name="+GlobalData.loggedInUser.getName()+"&title="+ titel.getText().toString()+
                         "&description="+description.getText().toString()+"&reward="+reward.getText().toString();
-                System.out.println(newPost);
+
                 try {
 
 

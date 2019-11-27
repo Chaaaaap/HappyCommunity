@@ -77,7 +77,7 @@ public class ApiPosts {
 
 
     public static PostOverviewModel createUser(String id) {
-        String url = "createpost/" + id;
+        String url = "createuser/" + id;
         try {
             JSONObject object = ApiConnector.getObject(url);
 
