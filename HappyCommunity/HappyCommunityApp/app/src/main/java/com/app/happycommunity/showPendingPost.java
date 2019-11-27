@@ -57,8 +57,7 @@ public class showPendingPost extends AppCompatActivity {
 
 
                     new CreateGeneralAsyncTask().execute(postDone).get();
-
-
+                    GlobalData.loggedInUser.setPoints(GlobalData.loggedInUser.getPoints()-Integer.parseInt(textViewReward.getText().toString()));
 
                 } catch (Exception e) {
                     e.printStackTrace();

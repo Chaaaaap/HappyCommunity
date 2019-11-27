@@ -7,8 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.happycommunity.asynctasks.FetchAcceptedPostsAsyncTask;
 import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
+import com.app.happycommunity.asynctasks.LoginAsyncTask;
 import com.app.happycommunity.models.GlobalData;
+import com.app.happycommunity.models.LoginInfo;
 import com.app.happycommunity.models.PostOverviewModel;
+import com.app.happycommunity.models.UserModel;
 
 import java.util.ArrayList;
 
@@ -20,13 +23,12 @@ public class dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-
-
         Button allPostsBtn = (Button) findViewById(R.id.allPosts);
         Button myPostsBtn = (Button) findViewById(R.id.myPosts);
         Button myAceptedPostBtn = (Button) findViewById(R.id.acceptedPosts);
         Button myPendingPostsBtn = (Button) findViewById(R.id.pendingPosts);
         TextView completedPosts = (TextView) findViewById(R.id.completedPosts);
+        TextView karmaPoints = (TextView) findViewById(R.id.karmaPoints);
         int [] count=new int [3];
         count=loadList();
         allPostsBtn.setText(allPostsBtn.getText().toString()+count[1]);
@@ -34,6 +36,7 @@ public class dashboard extends AppCompatActivity {
         myAceptedPostBtn.setText(myAceptedPostBtn.getText().toString()+""+loadListPending(1));
         myPendingPostsBtn.setText(myPendingPostsBtn.getText().toString()+count[2]);
         completedPosts.setText(completedPosts.getText().toString()+loadListPending(2));
+        karmaPoints.setText(karmaPoints.getText().toString()+GlobalData.loggedInUser.getPoints());
         allPostsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +80,12 @@ public class dashboard extends AppCompatActivity {
 
 
     }
+
+
+
+
+
+
     private int loadListPending(int listType) {
         ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
         try {
