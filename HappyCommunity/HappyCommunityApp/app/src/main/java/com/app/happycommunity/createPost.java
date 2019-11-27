@@ -5,14 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.happycommunity.asynctasks.CreatePostAsyncTask;
-import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
-import com.app.happycommunity.models.CreatePostModel;
 import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
 
@@ -39,7 +35,7 @@ public class createPost extends AppCompatActivity {
 
                 String newPost = "info?username="+GlobalData.loggedInUser.getUsername()+"&name="+GlobalData.loggedInUser.getName()+"&title="+ titel.getText().toString()+
                         "&description="+description.getText().toString()+"&reward="+reward.getText().toString();
-                System.out.println(newPost);
+
                 try {
 
 

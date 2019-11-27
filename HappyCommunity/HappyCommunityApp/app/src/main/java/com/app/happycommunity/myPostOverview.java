@@ -101,7 +101,9 @@ public class myPostOverview extends AppCompatActivity{
    private void loadList() {
         ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
         try {
-            temp = new FetchPostsAsyncTask().execute().get();
+            String posts = "0";
+
+            temp = new FetchPostsAsyncTask().execute(posts).get();
             if(temp.isEmpty()){
 
             }else {

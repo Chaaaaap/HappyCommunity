@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class ApiPosts {
 
-    public static ArrayList<PostOverviewModel> getPosts() {
-        String url = "getposts";
+    public static ArrayList<PostOverviewModel> getPosts(String id) {
+        String url = "getposts/"+id;
         ArrayList<PostOverviewModel> posts = new ArrayList<>();
 
         try {
@@ -74,4 +74,53 @@ public class ApiPosts {
         }
         return null;
     }
+
+
+    public static PostOverviewModel createUser(String id) {
+        String url = "createuser/" + id;
+        try {
+            JSONObject object = ApiConnector.getObject(url);
+
+
+            PostOverviewModel post = (new PostOverviewModel(object));
+
+            return post;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static PostOverviewModel createGeneral(String url) {
+
+        try {
+            JSONObject object = ApiConnector.getObject(url);
+
+
+            PostOverviewModel post = (new PostOverviewModel(object));
+
+            return post;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static ArrayList<PostOverviewModel> getAcceptedPosts(String id) {
+        String url = "getmytasks/"+id;
+        ArrayList<PostOverviewModel> posts = new ArrayList<>();
+
+        try {
+            JSONArray array = ApiConnector.getJSONArray(url);
+
+
+            for(int i = 0; i < array.length(); i++) {
+                posts.add(new PostOverviewModel(array.getJSONObject(i)));
+            }
+            return posts;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return posts;
+    }
+
 }

@@ -51,6 +51,14 @@
             android:screenOrientation="portrait"
             android:name=".createUser">
         </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".showAcceptedPost">
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".myAcceptedPosts">
+        </activity>
     </application>
 
 </manifest>

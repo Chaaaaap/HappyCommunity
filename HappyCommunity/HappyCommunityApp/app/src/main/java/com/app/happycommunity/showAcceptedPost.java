@@ -12,7 +12,7 @@ import com.app.happycommunity.asynctasks.DeletePostAsyncTask;
 import com.app.happycommunity.asynctasks.FetchPostAsyncTask;
 import com.app.happycommunity.models.PostOverviewModel;
 
-public class myPostDeletion extends AppCompatActivity {
+public class showAcceptedPost extends AppCompatActivity {
 
 
     @Override
@@ -22,7 +22,7 @@ public class myPostDeletion extends AppCompatActivity {
 
         String IDString = getIntent().getStringExtra("ID");
         PostOverviewModel post= null;
-       final int ID= Integer.parseInt(IDString);
+        final int ID= Integer.parseInt(IDString);
         try {
             post = new FetchPostAsyncTask().execute(ID).get();
 
@@ -43,32 +43,15 @@ public class myPostDeletion extends AppCompatActivity {
 
         Button acceptButton = (Button) findViewById(R.id.acceptBtn);
         Button declineButton = (Button)findViewById(R.id.declineBtn);
-        acceptButton.setText("Delete Post");
+        acceptButton.setVisibility(View.GONE);
         declineButton.setText("Back");
 
 
-                acceptButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        try {
-                            PostOverviewModel temp = new DeletePostAsyncTask().execute(ID).get();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        Intent intent = new Intent(myPostDeletion.this, myPostOverview.class);
 
-                        startActivity(intent);
-                        finish();
-                    }
-
-
-
-
-        });
         declineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(myPostDeletion.this, myPostOverview.class);
+                Intent intent = new Intent(showAcceptedPost.this, myAcceptedPosts.class);
 
                 startActivity(intent);
                 finish();

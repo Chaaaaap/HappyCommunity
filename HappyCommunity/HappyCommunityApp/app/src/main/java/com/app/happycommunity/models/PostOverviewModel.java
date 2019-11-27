@@ -30,7 +30,6 @@ public class PostOverviewModel {
             this.reward = object.getInt("reward");
             this.creator = object.getString("name");
             this.city = object.getString("city");
-
             this.username =object.getString("userName");
             this.description = object.getString("description");
         } catch(JSONException e) {
