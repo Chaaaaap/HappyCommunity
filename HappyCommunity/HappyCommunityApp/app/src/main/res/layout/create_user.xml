@@ -62,9 +62,25 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/createUserNumber"
-            android:hint="Number"
+            android:hint="Phone Number"
             android:inputType="number"
             android:maxLength="34">
+
+        </EditText>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createUserZip"
+            android:hint="Zip code"
+            android:inputType="number"
+            android:maxLength="34">
+
+        </EditText>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/createUserCity"
+            android:hint="City">
 
         </EditText>
 

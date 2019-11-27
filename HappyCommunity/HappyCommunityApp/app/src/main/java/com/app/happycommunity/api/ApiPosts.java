@@ -74,4 +74,34 @@ public class ApiPosts {
         }
         return null;
     }
+
+
+    public static PostOverviewModel createUser(String id) {
+        String url = "createpost/" + id;
+        try {
+            JSONObject object = ApiConnector.getObject(url);
+
+
+            PostOverviewModel post = (new PostOverviewModel(object));
+
+            return post;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static PostOverviewModel createGeneral(String url) {
+
+        try {
+            JSONObject object = ApiConnector.getObject(url);
+
+
+            PostOverviewModel post = (new PostOverviewModel(object));
+
+            return post;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

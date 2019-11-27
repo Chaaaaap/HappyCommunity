@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText password = (EditText) findViewById(R.id.password);
         final EditText userName = (EditText) findViewById(R.id.userName);
         final Button loginButton = (Button) findViewById(R.id.loginButton);
+        final Button createUserbtn = (Button) findViewById(R.id.createUserBtn);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
+        createUserbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(MainActivity.this, createUser.class);
+                startActivity(intent);
+
+            }
+        });
+
+    }
 }

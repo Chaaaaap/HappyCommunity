@@ -25,6 +25,8 @@ public class createUser extends AppCompatActivity {
         EditText passwordText= (EditText) findViewById(R.id.createUserPassword);
         EditText passwordText2= (EditText) findViewById(R.id.createUserPassword2);
         EditText usernameText= (EditText) findViewById(R.id.createUserUsername);
+        EditText zipText= (EditText) findViewById(R.id.createUserZip);
+        EditText cityText= (EditText) findViewById(R.id.createUserCity);
 
 
         acceptBtn.setOnClickListener(new View.OnClickListener() {
