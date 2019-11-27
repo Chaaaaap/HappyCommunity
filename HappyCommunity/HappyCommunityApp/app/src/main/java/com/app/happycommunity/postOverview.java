@@ -45,6 +45,7 @@ public class postOverview extends AppCompatActivity{
                 intent.putExtra("ID",post.getId()+"");
 
                 startActivity(intent);
+                finish();
             }
         });
         final Button createPostButton = (Button) findViewById(R.id.createpostPO);

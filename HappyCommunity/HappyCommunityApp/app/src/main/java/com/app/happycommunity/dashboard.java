@@ -64,7 +64,16 @@ public class dashboard extends AppCompatActivity {
 
             }
         });
+        myPendingPostsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dashboard.this, myPendingPosts.class);
 
+                startActivity(intent);
+
+
+            }
+        });
 
 
     }

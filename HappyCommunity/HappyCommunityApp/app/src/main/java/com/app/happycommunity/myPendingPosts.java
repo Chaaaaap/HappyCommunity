@@ -16,7 +16,7 @@ import com.app.happycommunity.models.PostOverviewModel;
 
 import java.util.ArrayList;
 
-public class myPostOverview extends AppCompatActivity{
+public class myPendingPosts extends AppCompatActivity{
     ListView postList;
     postOverviewAdapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -30,7 +30,7 @@ public class myPostOverview extends AppCompatActivity{
         postList.setAdapter(adapter);
         adapter.clear();
         TextView header = (TextView) findViewById(R.id.postHeader);
-        header.setText("My Posts");
+        header.setText("My Pending Posts");
         final Button createPostButton = (Button) findViewById(R.id.createpostPO);
         final Button dashboardBtn = (Button) findViewById(R.id.dashboard);
         final Button myPostsButton = (Button) findViewById(R.id.mypostsPO);
@@ -48,7 +48,7 @@ public class myPostOverview extends AppCompatActivity{
                                     long arg3)
             {
                 PostOverviewModel post = (PostOverviewModel) adapter.getItemAtPosition(position);
-                Intent intent = new Intent(myPostOverview.this, myPostDeletion.class);
+                Intent intent = new Intent(myPendingPosts.this, showPendingPost.class);
                 intent.putExtra("ID",post.getId()+"");
 
                 startActivity(intent);
@@ -60,7 +60,7 @@ public class myPostOverview extends AppCompatActivity{
         myPostsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(myPostOverview.this, postOverview.class);
+                Intent intent = new Intent(myPendingPosts.this, postOverview.class);
 
                 startActivity(intent);
                 finish();
@@ -72,7 +72,7 @@ public class myPostOverview extends AppCompatActivity{
         dashboardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(myPostOverview.this, dashboard.class);
+                Intent intent = new Intent(myPendingPosts.this, dashboard.class);
                 startActivity(intent);
                 finish();
             }
@@ -81,7 +81,7 @@ public class myPostOverview extends AppCompatActivity{
         createPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(myPostOverview.this, createPost.class);
+                Intent intent = new Intent(myPendingPosts.this, createPost.class);
 
                 startActivity(intent);
                 finish();
@@ -98,10 +98,10 @@ public class myPostOverview extends AppCompatActivity{
         });
 
     }
-   private void loadList() {
+    private void loadList() {
         ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
         try {
-            String posts = "0";
+            String posts = "1";
 
             temp = new FetchPostsAsyncTask().execute(posts).get();
             if(temp.isEmpty()){

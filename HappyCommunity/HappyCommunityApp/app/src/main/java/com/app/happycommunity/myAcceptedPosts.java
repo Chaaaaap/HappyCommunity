@@ -53,7 +53,7 @@ public class myAcceptedPosts extends AppCompatActivity{
                 intent.putExtra("ID",post.getId()+"");
 
                 startActivity(intent);
-
+                finish();
             }
         });
 
