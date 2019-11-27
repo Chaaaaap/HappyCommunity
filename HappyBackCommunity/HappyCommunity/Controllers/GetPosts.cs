@@ -15,7 +15,7 @@ namespace HappyCommunity.Controllers
 	public class GetPosts : Controller
 	{
 		// GET: api/<controller>
-		[HttpGet("info")]
+		[HttpGet]
 		public IEnumerable<PostOverviewModel> Get()
 		{
 			List<PostOverviewModel> Posts  = new List<PostOverviewModel>();
