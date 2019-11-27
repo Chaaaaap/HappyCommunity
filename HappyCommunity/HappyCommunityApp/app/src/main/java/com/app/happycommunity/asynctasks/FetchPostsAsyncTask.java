@@ -8,10 +8,10 @@ import com.app.happycommunity.models.PostOverviewModel;
 
 import java.util.ArrayList;
 
-public class FetchPostsAsyncTask extends AsyncTask<Void, Void, ArrayList<PostOverviewModel>> {
+public class FetchPostsAsyncTask extends AsyncTask<String, String, ArrayList<PostOverviewModel>> {
 
     @Override
-    protected ArrayList<PostOverviewModel> doInBackground(Void... voids) {
-        return ApiPosts.getPosts();
+    protected ArrayList<PostOverviewModel> doInBackground(String... voids) {
+        return ApiPosts.getPosts(voids[0]);
     }
 }

@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class ApiPosts {
 
-    public static ArrayList<PostOverviewModel> getPosts() {
-        String url = "getposts";
+    public static ArrayList<PostOverviewModel> getPosts(String id) {
+        String url = "getposts/"+id;
         ArrayList<PostOverviewModel> posts = new ArrayList<>();
 
         try {

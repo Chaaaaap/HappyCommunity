@@ -69,7 +69,8 @@
                 android:layout_height="match_parent"
                 android:text="Completed Posts:"
                 android:textSize="20dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:id="@+id/completedPosts">
 
             </TextView>
         </LinearLayout>

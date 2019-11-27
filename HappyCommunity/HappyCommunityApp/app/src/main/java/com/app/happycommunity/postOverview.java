@@ -9,6 +9,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.app.happycommunity.asynctasks.FetchAcceptedPostsAsyncTask;
 import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
 import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
@@ -96,7 +97,9 @@ public class postOverview extends AppCompatActivity{
     void loadList() {
         ArrayList<PostOverviewModel> temp = new ArrayList<>();
         try {
-            temp = new FetchPostsAsyncTask().execute().get();
+            String posts = "0";
+
+            temp = new FetchPostsAsyncTask().execute(posts).get();
             if(temp.isEmpty()){
 
             }else {
