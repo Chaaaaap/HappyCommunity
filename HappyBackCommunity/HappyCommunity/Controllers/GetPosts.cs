@@ -15,17 +15,18 @@ namespace HappyCommunity.Controllers
 	public class GetPosts : Controller
 	{
 		// GET: api/<controller>
-		[HttpGet]
-		public IEnumerable<PostOverviewModel> Get()
+		[HttpGet("{status}")]
+		public IEnumerable<PostOverviewModel> Get(int status)
 		{
 			List<PostOverviewModel> Posts  = new List<PostOverviewModel>();
 			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db"))
 			{
 				c.Open();
-				String sql = "Select Posts.id, Title, Reward, Posts.Name, City, Posts.UserName FROM Posts Inner JOIN Users on Posts.UserName = Users.UserName;";
+				String sql = $"Select Posts.id, Title, Reward, Posts.Name, City, Posts.UserName FROM Posts Inner JOIN Users on Posts.UserName = Users.UserName INNER JOIN PostTask ON Posts.ID = PostTask.ID where PostTask.Status = {status};";
 
 				using (SqliteCommand cmd = new SqliteCommand(sql, c))
 				{
+					
 					using (SqliteDataReader rdr = cmd.ExecuteReader())
 					{
 						while (rdr.Read())
@@ -49,12 +50,6 @@ namespace HappyCommunity.Controllers
 			return Posts;
 		}
 
-		// GET api/<controller>/5
-		[HttpGet("{id}")]
-		public string Get(int id)
-		{
-			return "value";
-		}
 
 		// POST api/<controller>
 		[HttpPost]
