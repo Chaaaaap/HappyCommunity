@@ -40,8 +40,16 @@
             android:name=".myPostDeletion">
         </activity>
         <activity
+        android:screenOrientation="portrait"
+        android:name=".createPost">
+    </activity>
+        <activity
             android:screenOrientation="portrait"
-            android:name=".createPost">
+            android:name=".dashboard">
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".createUser">
         </activity>
     </application>
 

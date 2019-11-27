@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -14,11 +12,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
 import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
-import com.app.happycommunity.api.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class postOverview extends AppCompatActivity{
     ListView postList;
@@ -52,7 +47,7 @@ public class postOverview extends AppCompatActivity{
             }
         });
         final Button createPostButton = (Button) findViewById(R.id.createpostPO);
-        final Button profileButton = (Button) findViewById(R.id.profilePO);
+        final Button dashboardBtn = (Button) findViewById(R.id.dashboard);
         final Button myPostsButton = (Button) findViewById(R.id.mypostsPO);
 
         myPostsButton.setOnClickListener(new View.OnClickListener() {
@@ -66,10 +61,10 @@ public class postOverview extends AppCompatActivity{
             }
         });
 
-        profileButton.setOnClickListener(new View.OnClickListener() {
+        dashboardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(postOverview.this, postOverview.class);
+                Intent intent = new Intent(postOverview.this, dashboard.class);
 
                 startActivity(intent);
                 finish();

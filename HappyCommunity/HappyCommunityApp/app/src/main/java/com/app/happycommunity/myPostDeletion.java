@@ -53,17 +53,8 @@ public class myPostDeletion extends AppCompatActivity {
                 acceptButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Insert something in the database
-
-
-
                         try {
-
-
                             PostOverviewModel temp = new DeletePostAsyncTask().execute(ID).get();
-
-
-
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

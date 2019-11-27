@@ -3,8 +3,6 @@ package com.app.happycommunity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.*;
-import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import android.os.Bundle;
@@ -44,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (user != null) {
                     GlobalData.loggedInUser = user;
-                    Intent intent = new Intent(MainActivity.this, postOverview.class);
+                    Intent intent = new Intent(MainActivity.this, dashboard.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),"Wrong username or password",Toast.LENGTH_SHORT);
                     toast.show();
