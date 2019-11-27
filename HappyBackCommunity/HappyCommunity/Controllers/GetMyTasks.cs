@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using HappyCommunity.Types;
 using Microsoft.AspNetCore.Mvc;
@@ -12,17 +12,16 @@ using Microsoft.Data.Sqlite;
 namespace HappyCommunity.Controllers
 {
 	[Route("api/[controller]")]
-	public class GetPosts : Controller
+	public class GetMyTasks : Controller
 	{
-		// GET: api/<controller>
-		[HttpGet("info")]
-		public IEnumerable<PostOverviewModel> Get()
+		[HttpGet("{info}")]
+		public IEnumerable<PostOverviewModel> Get(HttpRequestMessage request, string username, int status)
 		{
-			List<PostOverviewModel> Posts  = new List<PostOverviewModel>();
+			List<PostOverviewModel> Posts = new List<PostOverviewModel>();
 			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db"))
 			{
 				c.Open();
-				String sql = "Select Posts.id, Title, Reward, Posts.Name, City, Posts.UserName FROM Posts Inner JOIN Users on Posts.UserName = Users.UserName;";
+				String sql = $"Select Posts.id, Title, Reward, Posts.Name, City, Posts.UserName FROM Posts Inner JOIN PostTask INNER JOIN Users ON Posts.UserName = Users.UserName AND Posts.ID = PostTask.ID AND PostTask.UserHandlingTask = \"{username}\" AND PostTask.Status = {status};";
 
 				using (SqliteCommand cmd = new SqliteCommand(sql, c))
 				{
@@ -39,7 +38,7 @@ namespace HappyCommunity.Controllers
 								City = rdr["City"].ToString(),
 								UserName = rdr["UserName"].ToString()
 
-							}) ;
+							});
 						}
 					}
 				}
@@ -47,31 +46,11 @@ namespace HappyCommunity.Controllers
 
 
 			return Posts;
+
+
 		}
 
-		// GET api/<controller>/5
-		[HttpGet("{id}")]
-		public string Get(int id)
-		{
-			return "value";
-		}
-
-		// POST api/<controller>
-		[HttpPost]
-		public void Post([FromBody]string value)
-		{
-		}
-
-		// PUT api/<controller>/5
-		[HttpPut("{id}")]
-		public void Put(int id, [FromBody]string value)
-		{
-		}
-
-		// DELETE api/<controller>/5
-		[HttpDelete("{id}")]
-		public void Delete(int id)
-		{
-		}
 	}
+
+
 }
