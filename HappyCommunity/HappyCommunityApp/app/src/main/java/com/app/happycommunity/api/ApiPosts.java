@@ -104,4 +104,23 @@ public class ApiPosts {
         }
         return null;
     }
+
+    public static ArrayList<PostOverviewModel> getAcceptedPosts(String id) {
+        String url = "getmytasks/"+id;
+        ArrayList<PostOverviewModel> posts = new ArrayList<>();
+
+        try {
+            JSONArray array = ApiConnector.getJSONArray(url);
+
+
+            for(int i = 0; i < array.length(); i++) {
+                posts.add(new PostOverviewModel(array.getJSONObject(i)));
+            }
+            return posts;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return posts;
+    }
+
 }

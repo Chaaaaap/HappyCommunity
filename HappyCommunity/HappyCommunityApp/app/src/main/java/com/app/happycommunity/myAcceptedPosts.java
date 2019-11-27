@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.app.happycommunity.asynctasks.FetchAcceptedPostsAsyncTask;
 import com.app.happycommunity.asynctasks.FetchPostsAsyncTask;
 import com.app.happycommunity.models.GlobalData;
 import com.app.happycommunity.models.PostOverviewModel;
@@ -101,14 +102,16 @@ public class myAcceptedPosts extends AppCompatActivity{
     private void loadList() {
         ArrayList<PostOverviewModel> temp =  new ArrayList<PostOverviewModel>();
         try {
-            temp = new FetchPostsAsyncTask().execute().get();
+
+            String posts = "info?username="+GlobalData.loggedInUser.getUsername()+"&status="+"1";
+            temp = new FetchAcceptedPostsAsyncTask().execute(posts).get();
             if(temp.isEmpty()){
 
             }else {
                 for(PostOverviewModel model: temp){
-                    if(model.getUsername().equals(GlobalData.loggedInUser.getUsername())) {
+
                         adapter.add(model);
-                    }
+
                 }
             }
         } catch (Exception e) {
