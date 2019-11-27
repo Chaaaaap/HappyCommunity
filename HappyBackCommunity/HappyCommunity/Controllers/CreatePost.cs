@@ -25,10 +25,19 @@ namespace HappyCommunity.Controllers
 				{
 					using (SqliteDataReader rdr = cmd.ExecuteReader())
 					{
-						// Username not found
-						return Ok();
 					}
 				}
+				string sql1 = $"INSERT INTO \"PostTask\"(Status) VALUES(0);";
+				using (SqliteCommand cmd = new SqliteCommand(sql1, c))
+				{
+					using (SqliteDataReader rdr = cmd.ExecuteReader())
+					{
+					}
+				}
+
+				return Ok();
+
+
 			}
 
 		}

@@ -29,7 +29,8 @@ namespace HappyCommunity.Controllers
 			using (SqliteConnection c = new SqliteConnection("Data Source=HappyCommunity.db"))
 			{
 				c.Open();
-				String sql = $"Select ID, Title, Reward, Description, Posts.Name, City, ZipCode, Posts.UserName from Posts INNER JOIN Users on Posts.UserName = Users.UserName where Posts.ID = {id}";
+				String sql = $"Select Posts.ID, Title, Reward, Description, Posts.Name, City, ZipCode, Posts.UserName, PostTask.Status from Posts INNER JOIN Users INNER JOIN PostTask on Posts.UserName = Users.UserName AND Posts.ID = PostTask.ID AND Posts.ID = {id};";
+
 				using (SqliteCommand cmd = new SqliteCommand(sql, c))
 				{
 					using (SqliteDataReader rdr = cmd.ExecuteReader())
@@ -45,7 +46,9 @@ namespace HappyCommunity.Controllers
 								UserName = rdr["UserName"].ToString(),
 								City = rdr["City"].ToString(),
 								ZipCode = Int32.Parse(rdr["ZipCode"].ToString()),
-								Description = rdr["Description"].ToString()} ;
+								Description = rdr["Description"].ToString(),
+								Status = Int32.Parse(rdr["Status"].ToString())
+							};
 						}
         }
 				}

@@ -9,5 +9,6 @@ namespace HappyCommunity.Types
 	{
 		public string Description { get; set; }
 		public int ZipCode { get; set; }
+		public int Status { get; set; }
 	}
 }
