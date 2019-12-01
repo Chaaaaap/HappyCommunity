@@ -36,7 +36,7 @@ namespace HappyCommunity.Controllers
 				}
 
 				c.Open();
-				String sql1 = $"INSERT INTO Users(UserName, Name, Address, PhoneNumber, ZipCode, City, CountryCode, CurrentPoints) VALUES(\"{username}\", \"{name}\", \"{address}\", {phonenumber}, {zipcode}, \"{city}\", 45, 0);";
+				String sql1 = $"INSERT INTO Users(UserName, Name, Address, PhoneNumber, ZipCode, City, CountryCode, CurrentPoints) VALUES(\"{username}\", \"{name}\", \"{address}\", {phonenumber}, {zipcode}, \"{city}\", 45, 100);";
 				using (SqliteCommand cmd = new SqliteCommand(sql1, c))
 				{
 					
